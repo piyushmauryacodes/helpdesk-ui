@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { ChevronDown, Calendar, User, Tag, ChevronRight, X, Clock, HelpCircle } from 'lucide-react';
 
 export default function RightPanel({ ticket }) {
-  if (!ticket) return <div className="w-80 bg-white border-l border-gray-200"></div>;
+  if (!ticket) return <div className="hidden md:block w-80 bg-white border-l border-gray-200"></div>;
 
   return (
-    <div className="w-80 bg-white border-l border-gray-200 h-full flex flex-col flex-shrink-0 overflow-y-auto">
+    // Mobile: W-full, H-auto. Desktop: W-80, H-full.
+    <div className="w-full md:w-80 bg-white border-t md:border-t-0 md:border-l border-gray-200 h-auto md:h-full flex flex-col flex-shrink-0 md:overflow-y-auto">
       {/* Header Controls */}
       <div className="p-4 flex gap-2 border-b border-gray-100">
         <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 shadow-sm shadow-blue-200">

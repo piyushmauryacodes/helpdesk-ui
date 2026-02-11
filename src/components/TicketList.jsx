@@ -3,14 +3,15 @@ import { Search, Filter, Menu, User } from 'lucide-react';
 
 export default function TicketList({ tickets, selectedId, onSelect, toggleFilters, isFilterOpen }) {
   return (
-    <div className="w-[380px] flex-shrink-0 bg-white border-r border-gray-200 h-full flex flex-col z-10">
+    // Mobile: Height 400px scrollable. Desktop: Full height.
+    <div className="w-full md:w-[380px] h-[400px] md:h-full flex flex-col z-10">
       {/* Header */}
-      <div className="h-16 border-b border-gray-100 flex items-center justify-between px-4 flex-shrink-0">
+      <div className="h-16 border-b border-gray-100 flex items-center justify-between px-4 flex-shrink-0 sticky top-0 bg-white z-20">
           <div className="flex items-center gap-3">
-             {/* The Toggle Button from the GIF */}
+             {/* The Toggle Button (Hidden on Mobile) */}
              <button 
                 onClick={toggleFilters}
-                className={`p-2 rounded-md transition-colors ${!isFilterOpen ? 'bg-blue-50 text-blue-600' : 'text-gray-500 hover:bg-gray-100'}`}
+                className={`hidden md:block p-2 rounded-md transition-colors ${!isFilterOpen ? 'bg-blue-50 text-blue-600' : 'text-gray-500 hover:bg-gray-100'}`}
              >
                 <Menu size={20} />
              </button>
@@ -20,7 +21,7 @@ export default function TicketList({ tickets, selectedId, onSelect, toggleFilter
       </div>
       
       {/* Search */}
-      <div className="p-4 pt-3 pb-2">
+      <div className="p-4 pt-3 pb-2 bg-white">
         <div className="relative group">
           <Search className="absolute left-3 top-2.5 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={16} />
           <input 
@@ -32,7 +33,7 @@ export default function TicketList({ tickets, selectedId, onSelect, toggleFilter
       </div>
 
       {/* List */}
-      <div className="overflow-y-auto flex-1 px-2 pb-4 space-y-1">
+      <div className="overflow-y-auto flex-1 px-2 pb-4 space-y-1 bg-white">
         {tickets.map((t) => (
           <div 
             key={t.id} 
