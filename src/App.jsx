@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
-import TicketViews from './components/TicketViews';
+import ViewsPanel from './components/ViewsPanel';
 import TicketList from './components/TicketList';
 import TicketDetail from './components/TicketDetail';
 import RightPanel from './components/RightPanel';
@@ -63,7 +63,7 @@ function App() {
             
             {/* 2. Sliding Ticket Views (Hidden on Mobile) */}
             <div className="hidden md:block h-full">
-               <TicketViews isOpen={isFilterOpen} />
+               <ViewsPanel isOpen={isFilterOpen} />
             </div>
 
             {/* 3. Ticket List */}

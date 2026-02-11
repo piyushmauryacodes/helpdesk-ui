@@ -1,7 +1,7 @@
 import React from 'react';
 import { Inbox, Clock, AlertCircle, FileQuestion, MessageCircle } from 'lucide-react';
 
-export default function TicketViews({ isOpen }) {
+export default function ViewsPanel({ isOpen }) {
   return (
     <div 
       className={`bg-[#F4F5F7] border-r border-gray-200 h-full transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 ${isOpen ? 'w-[240px] opacity-100' : 'w-0 opacity-0'}`}
