@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
-import TicketViews from './components/TicketViews';
+import TicketViews from './components/TIcketViews';
 import TicketList from './components/TicketList';
 import TicketDetail from './components/TicketDetail';
 import RightPanel from './components/RightPanel';
